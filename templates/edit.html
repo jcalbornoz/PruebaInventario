@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+Django CRUD | Update
+{% endblock %}
+{% block body %}
+<center><h3>Editar Inventario</h3></center>
+    <form class="form-inline" method="POST" action="/update/{{ key.id }}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nombre">nombre</label>
+            <input type="text" name="nombre" class="form-control" value="{{ key.nombre }}" style="width:30%;" required="required"/>
+            <label for="descripcion">Descripción</label>
+            <input type="text" name="descripcion" class="form-control" value="{{ key.descripcion }}" style="width:30%;" required="required"/>
+            <label for="tipo">Tipo</label>
+            <input type="text" name="tipo" class="form-control"  value="{{ key.tipo }}" style="width:30%;" required="required"/>
+            <label for="serial">Serial</label>
+            <input type="text" name="serial" class="form-control" value="{{ key.serial }}" style="width:30%;" required="required"/>
+            <label for="valorcompra">Valor Compra</label>
+            <input type="text" name="valorcompra" class="form-control" value="{{ key.valorcompra }}" style="width:30%;" required="required"/>
+            <label for="fechadecompra">Fecha de compra</label>
+            <input type="date" name="fechadecompra" class="form-control" value="{{ key.fechadecompra }}" style="width:30%;" required="required"/>
+            <label for="area">Area</label>
+            <input type="text" name="area" class="form-control" value="{{ key.area }}" style="width:30%;" required="required"/>
+
+            <label for="persona">Persona</label>
+            <input type="text" name="persona" class="form-control" value="{{ key.persona }}" style="width:30%;" required="required"/>
+
+           
+            <label for="estado">Estado</label>
+            <input type="text" name="estado" class="form-control" value="{{ key.estado }}" style="width:30%;" required="required"/>
+
+           
+            <button type="submit" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-edit"></span> Actualizar</button>
+        </div>
+    </form>
+{% endblock %}
